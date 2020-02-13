@@ -15,7 +15,7 @@ def six_and_more(list):
 
     for i in list:
         if len(i) > 6:
-            lst_to_return.append(i)
+            lst_to_return.append(i.lower())
 
     return lst_to_return
 
@@ -36,8 +36,7 @@ def return_top_ten(list):
                 word = i
 
         lst.append(word)
-
-    return lst
+        print(f'{word}   :   встречается {max} раз')
 
 
 
@@ -51,6 +50,4 @@ for item in channel.findall('item'):
 
 
 six_and_more_list = six_and_more(words_lst)
-result = return_top_ten(six_and_more_list)
-
-pprint(result)
+return_top_ten(six_and_more_list)

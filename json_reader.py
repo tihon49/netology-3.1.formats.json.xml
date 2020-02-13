@@ -41,15 +41,11 @@ def return_top_ten(list):
                 word = i
 
         lst.append(word)
-
-    return lst
+        print(f'{word}   :   встречается {max} раз')
 
 
 
 with open(file_name, encoding='utf-8') as f:
     file = json.load(f)
     six_more_list = find_six_and_more()
-    top_ten = return_top_ten(six_more_list)
-
-    pprint(top_ten)
-
+    return_top_ten(six_more_list)
