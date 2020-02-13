@@ -36,16 +36,12 @@ def return_top_ten(list):
 
         for i in list:
             count = list.count(i)
-            if count > max:
+            if count > max and i not in lst:
                 max = count
                 word = i
 
-        # lst.append ([word, max])
         lst.append(word)
 
-        for i in list:
-            if i == word:
-                list.remove (i)
     return lst
 
 
@@ -56,3 +52,4 @@ with open(file_name, encoding='utf-8') as f:
     top_ten = return_top_ten(six_more_list)
 
     pprint(top_ten)
+

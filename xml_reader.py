@@ -30,17 +30,13 @@ def return_top_ten(list):
         max = 0
 
         for i in list:
-            count = list.count (i)
-            if count > max:
+            count = list.count(i)
+            if count > max and i not in lst:
                 max = count
                 word = i
 
-        # lst.append ([word, max])
         lst.append(word)
 
-        for i in list:
-            if i == word:
-                list.remove (i)
     return lst
 
 
