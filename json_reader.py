@@ -6,11 +6,12 @@ from pprint import pprint
 file_name = 'newsafr.json'
 
 
-def find_six_and_more():
+##########################################################
+def find_six_and_more(f_name):
     """находим слова длиннее 6-ти символов"""
     six_more_lst = []
 
-    for news in file['rss']['channel']['items']:
+    for news in f_name['rss']['channel']['items']:
         # title = news['title']
         # date = news['pubDate']
         description = news['description']
@@ -42,10 +43,10 @@ def return_top_ten(list):
 
         lst.append(word)
         print(f'{word}   :   встречается {max} раз')
-
+##########################################################
 
 
 with open(file_name, encoding='utf-8') as f:
     file = json.load(f)
-    six_more_list = find_six_and_more()
+    six_more_list = find_six_and_more(file)
     return_top_ten(six_more_list)

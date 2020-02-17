@@ -2,6 +2,7 @@ from pprint import pprint
 import xml.etree.ElementTree as ET
 
 
+
 file_name = 'newsafr.xml'
 
 mytree = ET.parse(file_name)
@@ -9,8 +10,9 @@ myroot = mytree.getroot()
 channel = myroot[0]
 
 
-
-def six_and_more(list):
+##########################################################
+def find_six_and_more(list):
+    """находим слова длиннее 6-ти символов"""
     lst_to_return = []
 
     for i in list:
@@ -37,7 +39,7 @@ def return_top_ten(list):
 
         lst.append(word)
         print(f'{word}   :   встречается {max} раз')
-
+##########################################################
 
 
 words_lst = []
@@ -49,5 +51,5 @@ for item in channel.findall('item'):
 
 
 
-six_and_more_list = six_and_more(words_lst)
+six_and_more_list = find_six_and_more(words_lst)
 return_top_ten(six_and_more_list)
